@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@reference background;
+@reference foreground;
+@reference border;
+@reference input;
+@reference ring;
+@reference card;
+@reference card-foreground;
+@reference primary;
+@reference primary-foreground;
+@reference secondary;
+@reference secondary-foreground;
+@reference destructive;
+@reference destructive-foreground;
+@reference muted;
+@reference muted-foreground;
+@reference accent;
+@reference accent-foreground;
+@reference popover;
+@reference popover-foreground;
+
+/* Standard color references */
+@reference gray-50;
+@reference gray-200;
+@reference gray-300;
+@reference gray-400;
+@reference gray-600;
+@reference gray-700;
+@reference gray-800;
+@reference gray-900;
+@reference blue-300;
+@reference blue-400;
+@reference blue-600;
+@reference blue-800;
+@reference green-50;
+@reference green-200;
+@reference green-800;
+@reference green-900;
+@reference white;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+}
