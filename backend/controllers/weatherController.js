@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { weatherApiConfig } from '../config/config.js';
 import { createWeatherRequestSchema } from '../schemas/weatherSchema.js';
-import { authenticateToken } from '../middleware/auth.js';
+
 
 /**
  * Controller to handle weather API requests

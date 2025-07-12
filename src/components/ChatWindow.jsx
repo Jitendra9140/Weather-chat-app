@@ -375,36 +375,38 @@ export const ChatWindow = () => {
     </div>
   </CardContent>
 
-  {/* Floating Input */}
-  <CardFooter className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-screen-lg px-4 sm:px-6 md:px-8 lg:px-16 z-50">
-    <form 
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleSendMessage();
-      }} 
-      className="flex w-full items-end gap-2 bg-white px-4 py-2 rounded-xl shadow-lg"
-    >
-      <Textarea
-        value={inputValue}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        placeholder="Type your message..."
-        className="min-h-[60px] flex-1 text-black bg-white resize-none border-none rounded-lg focus:outline-none focus:ring-0"
-        disabled={isLoading}
-      />
-      <Button 
-        type="submit" 
-        size="icon" 
-        disabled={isLoading || inputValue.trim() === ''}
-        className="bg-gray-900 hover:bg-gray-800 text-white rounded-lg"
+  {/* Input Footer */}
+  <CardFooter className="w-full px-4 sm:px-6 md:px-8 lg:px-16 py-4 bg-white ">
+    <div className="w-full mx-auto max-w-screen-lg">
+      <form 
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSendMessage();
+        }} 
+        className="flex w-full items-end gap-2 bg-white px-4 py-2 rounded-xl shadow-lg"
       >
-        {isLoading ? (
-          <Loader2 className="h-5 w-5 text-white animate-spin" />
-        ) : (
-          <Send className="h-5 w-5 text-white" />
-        )}
-      </Button>
-    </form>
+        <Textarea
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          placeholder="Type your message..."
+          className="min-h-[60px] flex-1 text-black bg-white resize-none border-none rounded-lg focus:outline-none focus:ring-0"
+          disabled={isLoading}
+        />
+        <Button 
+          type="submit" 
+          size="icon" 
+          disabled={isLoading || inputValue.trim() === ''}
+          className="bg-gray-900 hover:bg-gray-800 text-white rounded-lg"
+        >
+          {isLoading ? (
+            <Loader2 className="h-5 w-5 text-white animate-spin" />
+          ) : (
+            <Send className="h-5 w-5 text-white" />
+          )}
+        </Button>
+      </form>
+    </div>
   </CardFooter>
 
 </Card>
